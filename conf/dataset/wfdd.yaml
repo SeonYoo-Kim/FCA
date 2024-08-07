@@ -1,0 +1,7 @@
+name: wfdd
+data_manager:
+  _target_: data_loaders.StandardFormatDataset
+  data_dir: ${hydra:runtime.cwd}/datasets/WFDD
+  out_dir: ${hydra:runtime.output_dir}
+  paddings: [50]
+  objects: ['grey_cloth', 'grid_cloth', 'pink_flower', 'yellow_cloth']
