@@ -1,0 +1,7 @@
+name: dtd
+data_manager:
+  _target_: data_loaders.StandardFormatDataset
+  data_dir: ${hydra:runtime.cwd}/datasets/DTD-Synthetic
+  out_dir: ${hydra:runtime.output_dir}
+  paddings: [20]
+  objects: ['Blotchy_099', 'Fibrous_183', 'Marbled_078', 'Matted_069', 'Mesh_114', 'Perforated_037', 'Stratified_154', 'Woven_001', 'Woven_068', 'Woven_104', 'Woven_125', 'Woven_127']
