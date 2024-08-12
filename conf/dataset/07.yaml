@@ -1,7 +1,7 @@
-name: 0.1
+name: 07
 data_manager:
   _target_: data_loaders.StandardFormatDataset
-  data_dir: ${hydra:runtime.cwd}/datasets/Beta_0.1
+  data_dir: ${hydra:runtime.cwd}/datasets/07
   out_dir: ${hydra:runtime.output_dir}
   paddings: [100]
   objects: ['carpet', 'grid', 'leather', 'tile', 'wood']
