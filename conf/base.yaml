@@ -5,8 +5,8 @@ tile_size: [9, 9]
 
 defaults:
   - _self_
-  - fe: ???
-  - sc: ???
+  - fe: wide
+  - sc: fca
   - dataset: mvtec
 
 
