@@ -36,7 +36,7 @@ def my_app(cfg: DictConfig) -> None:
 
     data_manager.run_evaluation()
     elapsed_time = time.time() - start_time
-    time_log_txt = open(os.path.join(cfg.dir, 'time_log.txt'), 'a')
+    time_log_txt = open(os.path.join(in_image_path, 'time_log.txt'), 'a')
     time_log_txt.write(f"{elapsed_time}\n")
     time_log_txt.close()
 

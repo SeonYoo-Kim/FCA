@@ -8,7 +8,6 @@ defaults:
   - fe: wide
   - sc: fca
   - dataset: mvtec
-  - dir: ./outputs/${dataset.name}_${fe.name}_${sc.name}_${now:%Y-%m-%d}_${now:%H-%M-%S}
 
 hydra:
   job:
