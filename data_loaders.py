@@ -50,7 +50,12 @@ class StandardFormatDataset(Dataset):
         tiff.imsave(out_def_path / f"{stem}.tiff", np_age)
         # Save for visualization
         vis = ((np_age - np_age.min()) / (np_age.max() - np_age.min()) * 255)
-        Image.fromarray(vis.astype(np.uint8)).save(vis_def_path / f"{stem}.jpg")
+        image = Image.fromarray(vis.astype(np.uint8))
+
+        resized_image = image.resize((image.width * 8, image.height * 8), Image.BICUBIC)
+
+        resized_image.save(vis_def_path / f"{stem}.jpg")
+
 
     def run_evaluation(self):
         args = {

@@ -2,8 +2,6 @@ from typing import Callable
 
 import hydra
 import torch
-import time
-import os
 from hydra.utils import instantiate
 from omegaconf import DictConfig, OmegaConf
 from tqdm import tqdm
@@ -29,16 +27,11 @@ def run_anomaly_detection(dataset, cfg: DictConfig):
 
 @hydra.main(version_base=None, config_path="conf", config_name="base")
 def my_app(cfg: DictConfig) -> None:
-    start_time = time.time()
     print(OmegaConf.to_yaml(cfg))
     data_manager = instantiate(cfg.dataset.data_manager)
     run_anomaly_detection(data_manager, cfg)
 
     data_manager.run_evaluation()
-    elapsed_time = time.time() - start_time
-    time_log_txt = open(os.path.join(in_image_path, 'time_log.txt'), 'a')
-    time_log_txt.write(f"{elapsed_time}\n")
-    time_log_txt.close()
 
 
 if __name__ == "__main__":
